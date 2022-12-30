@@ -17,4 +17,8 @@ public interface RatingService {
     Rating findById(Long ratingId) throws ResourceNotFoundException;
 
     Map findAllRatings(PaginationDTO paginationDTO) throws ServiceException;
+
+    List<Rating> findRatingByUserId(Long userId);
+
+    List<Rating> findRatingByHotelId(Long hotelId);
 }

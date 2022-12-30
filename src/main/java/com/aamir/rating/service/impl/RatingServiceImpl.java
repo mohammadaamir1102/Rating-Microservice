@@ -54,4 +54,14 @@ public class RatingServiceImpl implements RatingService {
         datamap.put("totalRecords", ratings.getSize());
         return datamap;
     }
+
+    @Override
+    public List<Rating> findRatingByUserId(Long userId) {
+        return ratingRepository.findByUserId(userId);
+    }
+
+    @Override
+    public List<Rating> findRatingByHotelId(Long hotelId) {
+        return ratingRepository.findByHotelId(hotelId);
+    }
 }
