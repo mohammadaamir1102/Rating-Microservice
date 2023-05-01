@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Data
@@ -26,7 +27,8 @@ public class Rating {
     @Column(name = "HOTEL_ID")
     private Long hotelId;
     @Column(name = "RATING")
-    @Size(max = 5, min = 1, message = "Rating can not be greater than 5 and less than 1")
+    @Min(value = 1, message = "Rating cannot be lower than 1")
+    @Max(value = 5, message = "Rating cannot be greater than out of 5")
     private Integer rating;
     @Column(name = "FEEDBACK")
     private String feedBack;

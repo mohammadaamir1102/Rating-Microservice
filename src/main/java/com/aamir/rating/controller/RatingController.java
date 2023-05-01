@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class RatingController {
     private RatingService ratingService;
 
     @PostMapping("/saveRating")
-    public ResponseEntity<Rating> saveRating(@RequestBody Rating rating) {
+    public ResponseEntity<Rating> saveRating(@Valid @RequestBody Rating rating) {
         log.info("/* inside the RatingController, rating {} */ ", rating);
         Rating saveRating = ratingService.saveRating(rating);
         log.info("/* saved Successfully, rating {} */ ", saveRating);
