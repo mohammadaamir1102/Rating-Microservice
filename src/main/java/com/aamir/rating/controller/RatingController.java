@@ -64,7 +64,7 @@ public class RatingController {
 
     @GetMapping("/hotelId/{hotelId}")
     public ResponseEntity<List<Rating>> findRatingByHotelId(@PathVariable Long hotelId) {
-        List<Rating> ratingByHotelId = ratingService.findRatingByUserId(hotelId);
+        List<Rating> ratingByHotelId = ratingService.findRatingByHotelId(hotelId);
         return ResponseEntity.status(HttpStatus.OK).body(ratingByHotelId);
     }
 
