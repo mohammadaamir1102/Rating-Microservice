@@ -8,8 +8,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-    application:
-      name: ratingService
+  application:
+    name: RATING-SERVICE
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
@@ -18,3 +18,12 @@ server:
   port: 8085
   servlet:
     context-path: /ratingService
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:0786/eureka
